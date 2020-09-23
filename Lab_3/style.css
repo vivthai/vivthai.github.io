@@ -7,7 +7,7 @@ html, body {
 
 html {
   font-size: 10px;
-  background-color: #a9a9a9;
+  background-color: #95b8e5;
 }
 
 body {
@@ -19,14 +19,13 @@ body {
 /* || typography */
 
 h1, h2, h3 {
-  font-family: 'Cinzel Decorative', cursive;
+  font-family: 'Comfortaa', cursive;
   color: #2a2a2a;
 }
 
-p, input, li {
-  font-family: 'Roboto Condensed', sans-serif;
-  color: #2a2a2a;
-}
+p, input, li {  
+  font-family: 'Roboto Condensed', sans-serif;  
+  color: #2a2a2a;}
 
 h1 {
   font-size: 4rem;
