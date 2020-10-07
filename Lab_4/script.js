@@ -20,5 +20,5 @@ html.onclick = function() {
   }
 }
 
-var str="Change this using only Javascript";  
-document.writeln(str.replace(/Change this using only Javascript/g,"Vivian Thai\s Lab 4"));  
+var str = "Change this using only Javascript!";
+var res = str.replace(/Change this using only Javascript/, "Vivian Thai\s Lab 4");
