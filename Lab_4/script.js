@@ -1,24 +1,21 @@
-const list = document.createElement('ul');
-const info = document.createElement('p');
-const html = document.querySelector('html');
+let myFullName = "Bill Farmer"; // 10 characters in name...not including space
+// 1 Change the content of the div with class "header" to "[Your name]'s Lab 4"
 
-info.textContent = 'Below is a dynamic list. Click anywhere outside the list to add a new list item. Click an existing list item to change its text to something else.';
+// 2 Insert two paragraphs into the div with the class "content"
+//  Label each paragraph with a distinct class name
 
-document.body.appendChild(info);
-document.body.appendChild(list);
 
-html.onclick = function() {
-  const listItem = document.createElement('li');
-  const listContent = prompt('What content do you want the list item to have?');
-  listItem.textContent = listContent;
-  list.appendChild(listItem);
+// 3 Into the first paragraph, insert the phrase "my name has " length of your name " characters"
+//      (e.g. my name has 10 characters).
 
-  listItem.onclick = function(e) {
-    e.stopPropagation();
-    const listContent = prompt('Enter new content for your list item');
-    this.textContent = listContent;
-  }
-}
+// 4 & 5 Into the second paragraph tag, return the 3rd character in your first name
 
-var str = "Change this using only Javascript!";
-var res = str.replace(/Change this using only Javascript/, "Vivian Thai\s Lab 4");
+// 6 Add a new line to your second paragraph
+
+// 7 Return the final three characters of your last name to that new line
+
+// 8 Substring your first and last name into two separate variables
+
+// 9 Add the total length of your first and last names together
+
+// 10 Display that total next to your name in your header
