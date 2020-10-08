@@ -13,8 +13,8 @@ secondParagraph.className = 'content2';
 document.querySelector('.content').append(firstParagraph, secondParagraph);
 
 // 3 Into the first paragraph, insert the phrase "my name has " length of your name " characters"
-//      (e.g. my name has 10 characters).
-firstParagraph.innerText = "my name has " + (myFullName.length - 1) + " characters.";
+//(e.g. my name has 10 characters).
+firstParagraph.innerText = "my name has " + (myFullName.length - 1) + " characters";
 
 // 4 & 5 Into the second paragraph tag, return the 3rd character in your first name
 secondParagraph.innerText = "the third character in my name is " + myFullName.slice(2,3).toUpperCase()
