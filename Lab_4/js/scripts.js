@@ -6,7 +6,7 @@ myHeading.textContent = "Vivian Thai's Lab 4";
 // 2 Insert two paragraphs into the div with the class "content"
 //  Label each paragraph with a distinct class name
 let firstParagraph = document.createElement("p");
-firstParagraph.className = 'contentOne';
+firstParagraph.className = 'content1';
 let secondParagraph = document.createElement("p");
 secondParagraph.className = 'content2';
 
