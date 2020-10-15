@@ -323,5 +323,5 @@ document.body.append(mainContent);                    // Add 'content' class to 
  
  }
  
- const button = document.querySelector('.activate');
+ const button = document.querySelector('.button');
  button.addEventListener("click", testfunc);
