@@ -1,4 +1,4 @@
-const countriesList = [
+const countries = [
     { "name": "Afghanistan", "code": "AF" },
     { "name": "Åland Islands", "code": "AX" },
     { "name": "Albania", "code": "AL" },
@@ -242,63 +242,46 @@ const countriesList = [
     { "name": "Yemen", "code": "YE" },
     { "name": "Zambia", "code": "ZM" },
     { "name": "Zimbabwe", "code": "ZW" }
-  ]
-   
- let myButton = document.querySelector('button');
- let temp_countries = countries.slice(0);
- let myButton = document.querySelector('button');
- let temp_countries = countries.slice(0);
+  ];
+console.log("List of countries in the world", countries);
 
- myButton.onclick = function() {
-   const content = document.querySelector('.content');
-   content.innerHTML = "";
+function loadData(){
+  const content = document.querySelector(".content");
+  content.innerHTML = " ";
+  const orderedList = document.createElement("ol");
+  orderedList.className = "countries";
+  content.appendChild(orderedList)
 
-   /* create copy of array*/
-   //let temp_countries = countries.slice(0);
-   const new_countries = [];
-
-   const orderedList = document.createElement("ol");               
-   orderedList.ClassName = "countries";     
-   content.appendChild(orderedList);
-
-   /*choose 25 countries*/
-   let arr_randomItem = [];
-
-   for(let i = 0; i < 25; i++){
-   let randomItem = temp_countries[Math.floor(Math.random()*temp_countries.length)];
-
-   arr_randomItem.push(randomItem); 
-   
-   }
-
-   /*add randomItem to list item*/
-
-   let list = content.innerHTML;
-
-    for (let number = 0; number < 25; number++) {
-      new_countries.push(arr_randomItem[number]);
-
-      /*finds index number of random country*/
-     let last = temp_countries.indexOf(arr_randomItem[number]);
-
-      const listItem = document.createElement("li"); 
-      listItem.innerHTML = `<strong> ${arr_randomItem[number].code}</strong> ${arr_randomItem[number].name};`            
-      orderedList.appendChild(listItem);
-      temp_countries.splice(last,1);
-
-      /*revise copy of array*/
-     
+  let countriesList = [];
+    
+  let i = 0;
+  for(i, i < 25; i++;) {
+    let temp = getRandomIntInclusive(0, 242);
+    if(countriesList.includes(temp)) {
+      i--;
     }
-    for (let j = 0; j < temp_countries.length; j++){
-        if (
-          new_countries.includes(temp_countries[j].code.bold() + " " + temp_countries[j].name)
-          )
-          {
-            j++
-          } else{
-            console.log(temp_countries[j].name);
-            
-          }
-          
-      }
- }
+    else {
+      countriesList.push(temp);
+    }
+  }
+
+  countriesList.sort(function(first, second){return first-second});
+
+  countriesList.forEach(element => {
+    const lElement = document.createElement("li");
+    lElement.innerHTML = '<strong>${countries[element].code}</strong> ${countries[element].name}';
+    orderedList.appendChild(lElement);
+  });
+
+  countries.forEach(element => {
+    if (!countriesList.includes(countries.indexOf(element))){
+      console.log('Country: ${element.name}, Code: ${element.code}');
+    }
+  });
+}
+
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
