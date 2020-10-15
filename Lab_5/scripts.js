@@ -243,82 +243,62 @@ const countriesList = [
     { "name": "Zambia", "code": "ZM" },
     { "name": "Zimbabwe", "code": "ZW" }
   ]
+   
+ let myButton = document.querySelector('button');
+ let temp_countries = countries.slice(0);
+ let myButton = document.querySelector('button');
+ let temp_countries = countries.slice(0);
 
-let mainContent = document.createElement('div');      // Create <div> element and assign to mainContent
-mainContent.className = "content";                    // 
-document.body.append(mainContent);                    // Add 'content' class to <body>
-  
- const mainContent = document.querySelector('.content');
- 
- let orderedlist = document.createElement('ol');
- content.appendChild(orderedlist);
- 
- function getRandomInt(min, max) {
-     console.log('getRandomInt works')
-       min = Math.ceil(min);
-      max = Math.floor(max);
-      return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+ myButton.onclick = function() {
+   const content = document.querySelector('.content');
+   content.innerHTML = "";
+
+   /* create copy of array*/
+   //let temp_countries = countries.slice(0);
+   const new_countries = [];
+
+   const orderedList = document.createElement("ol");               
+   orderedList.ClassName = "countries";     
+   content.appendChild(orderedList);
+
+   /*choose 25 countries*/
+   let arr_randomItem = [];
+
+   for(let i = 0; i < 25; i++){
+   let randomItem = temp_countries[Math.floor(Math.random()*temp_countries.length)];
+
+   arr_randomItem.push(randomItem); 
+   
+   }
+
+   /*add randomItem to list item*/
+
+   let list = content.innerHTML;
+
+    for (let number = 0; number < 25; number++) {
+      new_countries.push(arr_randomItem[number]);
+
+      /*finds index number of random country*/
+     let last = temp_countries.indexOf(arr_randomItem[number]);
+
+      const listItem = document.createElement("li"); 
+      listItem.innerHTML = `<strong> ${arr_randomItem[number].code}</strong> ${arr_randomItem[number].name};`            
+      orderedList.appendChild(listItem);
+      temp_countries.splice(last,1);
+
+      /*revise copy of array*/
+     
+    }
+    for (let j = 0; j < temp_countries.length; j++){
+        if (
+          new_countries.includes(temp_countries[j].code.bold() + " " + temp_countries[j].name)
+          )
+          {
+            j++
+          } else{
+            console.log(temp_countries[j].name);
+            
+          }
+          
+      }
  }
- 
- // MDN Sorting numbers help
- function compareNumbers(a, b) {
-     return a - b;
- }
- // Gabe's original pasta al dente
- function listOfIndexes() {
-     console.log('listOfIndexes works');
-     let numberlist = [];
-     for (let i = 0; i < 25; i++) {
-         /* Curious thing happened here. Using let instead of var actually broke
-             the loop and triggered it to be infinite. Variables defined
-             using let are scoped by the block so I couldn't use it in this
-             while loop since the index variable wasn't being overwritten in
-             a place that the condition could read it. Var fixes this since
-             var is function scoped and could be actually be accessed
-         */
-         var index = getRandomInt(0, countries.length - 1);
-         // While loops are bad, try to use an if/else statement
-         while (numberlist.includes(index) === true) {
-             var index = getRandomInt(0, countries.length - 1);
-         }
-         numberlist.push(index);
-     };
-     // Sorting alphabetically
-     let sortedlist = numberlist.sort(compareNumbers);
-     console.log(sortedlist);
-     return sortedlist;
- }
- 
- function listelementcreator(country, code, fatherfigure) {
-     let item = document.createElement("li");
-     item.className = "country";
-     item.innerHTML = " " + country;
-     fatherfigure.appendChild(item);
-     item.insertAdjacentHTML( 'afterbegin', code.bold());
- }
- 
- function testfunc() {
- 
-     // from MDN
-     // Wipes all elements in content if any exist
-     // While loops are bad. there must be a way of using an if/else or a for loop
-     while (orderedlist.firstChild) {
-         orderedlist.removeChild(orderedlist.firstChild);
-     }
- 
-     // Creates list of countries
-     let indexes = listOfIndexes()
-     for (let i = 0; i < indexes.length; i++) {
-         let ind = indexes[i];
-         listelementcreator(countries[ind]['name'], countries[ind]['code'], orderedlist);
-     };
-     for (let i = 0; i < countries.length; i++) {
-         if (indexes.includes(i) === false) {
-             console.log(countries[i]);
-         }
-     }
- 
- }
- 
- const button = document.querySelector('.button');
- button.addEventListener("click", testfunc);
