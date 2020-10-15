@@ -245,43 +245,40 @@ const countries = [
   ];
 console.log("List of countries in the world", countries);
 
-function loadData(){
-  const content = document.querySelector(".content");
-  content.innerHTML = " ";
-  const orderedList = document.createElement("ol");
-  orderedList.className = "countries";
-  content.appendChild(orderedList)
+const content = document.querySelector(".content");
+content.innerHTML = " ";
+const orderedList = document.createElement("ol");
+orderedList.className = "countries";
+content.appendChild(orderedList)
 
-  let countriesList = [];
-    
-  let i = 0;
-  for(i, i < 25; i++;) {
-    let temp = getRandomIntInclusive(0, 242);
-    if(countriesList.includes(temp)) {
-      i--;
-    }
-    else {
-      countriesList.push(temp);
-    }
+let countriesList = [];
+  
+for(i = 0; i < 25; i++) {
+  let temp = getRandomIntInclusive(0, 242);
+  if(countriesList.includes(temp)) {
+    i--;
   }
-
-  countriesList.sort(function(first, second){return first-second});
-
-  countriesList.forEach(element => {
-    const lElement = document.createElement("li");
-    lElement.innerHTML = '<strong>${countries[element].code}</strong> ${countries[element].name}';
-    orderedList.appendChild(lElement);
-  });
-
-  countries.forEach(element => {
-    if (!countriesList.includes(countries.indexOf(element))){
-      console.log('Country: ${element.name}, Code: ${element.code}');
-    }
-  });
+  else {
+    countriesList.push(temp);
+  }
 }
 
+countriesList.sort(function(first, second){return first-second});
+
+countriesList.forEach(element => {
+  const firstElement = document.createElement("li");
+  firstElement.innerHTML = "<b>${countries[element].code}</b> ${countries[element].name}";
+  orderedList.appendChild(firstElement);
+});
+
+countries.forEach(element => {
+  if (!countriesList.includes(countries.indexOf(element))){
+    console.log('Country: ${element.name}, Code: ${element.code}');
+  }
+});
+
 function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+min = Math.ceil(min);
+max = Math.floor(max);
+return Math.floor(Math.random() * (max - min + 1)) + min;
 }
