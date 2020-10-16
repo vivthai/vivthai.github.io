@@ -1,3 +1,4 @@
+// List of countries and their code
 const countries = [
   { "name": "Afghanistan", "code": "AF" },
   { "name": "Åland Islands", "code": "AX" },
@@ -244,16 +245,22 @@ const countries = [
   { "name": "Zimbabwe", "code": "ZW" }
   ];
 
-const btn = document.querySelector("button");   // Create a <button> element
+// Create a <button> element and the button click function
+const btn = document.querySelector("button");
 btn.onclick = function(){
-  console.log("List of countries in the world", countries);
 
+// Outputs "List of countries in the world" to the web console 
+console.log("List of countries in the world", countries);
+
+// Create <content> and ol element
+// Add the orderedList into the content class
 const content = document.querySelector(".content");
 content.innerHTML = " ";
 const orderedList = document.createElement("ol");
 orderedList.className = "countries";
 content.appendChild(orderedList)
 
+// Set up number values to identify and loop through the countriesList 
 let countriesList = [];
 for(i = 0; i < 25; i++) {
   let temp = getRandomIntInclusive(0, 242);
@@ -265,20 +272,24 @@ for(i = 0; i < 25; i++) {
   }
 }
 
+// Sort the countriesList 
 countriesList.sort(function(first, second){return first-second});
 
+// Add the countries and their code with the correct formatting to the orderedList
 countriesList.forEach(element => {
   const firstElement = document.createElement("li");
   firstElement.innerHTML = '<b>' + countries[element].code + '</b>' + " " + countries[element].name;
   orderedList.appendChild(firstElement);
 });
 
+// Display the countries and their code with the correct formatting
 countries.forEach(element => {
   if (!countriesList.includes(countries.indexOf(element))){
     console.log('Country: ${element.name}, Code: ${element.code}');
   }
 });
 
+// Returns a random integer between the min and max value
 function getRandomIntInclusive(min, max) {
 min = Math.ceil(min);
 max = Math.floor(max);
