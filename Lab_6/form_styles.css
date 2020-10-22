@@ -5,59 +5,36 @@ body{
 h1{
     text-align: center;
     color: 	#484848;
-    font-family: 'Heebo', sans-serif;
-    
-   
+    font-family: 'Heebo', sans-serif;  
 }
 
-form {
-
-  /* Center the form on the page */
-  margin: auto;
-  width: 400px;
-
+form { 
+    margin: auto;
+    width: 400px;
 }
 
 
 label {
-
-   /* Uniform size & alignment */
-  display: block;
-  width: 10px;
-  text-align: right;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  color: 	#484848;
-  font-family: 'Heebo', sans-serif;
-  font-size: 17px;
+    display: block;
+    width: 10px;
+    text-align: right;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: 	#484848;
+    font-family: 'Heebo', sans-serif;
+    font-size: 17px;
 }
 
 input, textarea {
-
-
-    /* To make sure that all text fields have the same font settings
-     By default, textareas have a monospace font */
-  font: 1em sans-serif;
-
-  /* Uniform text field size */
-  width: 300px;
-  box-sizing: border-box;
-
-  /* Match form field borders */
-  border: 1px solid #999;
-
-  font-family: 'Rokkitt', serif;
-
-  
-    
-
+    font: 1em sans-serif;
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid #999;
+    font-family: 'Rokkitt', serif;
 }
 
 ul {
-
     list-style: none;
-    /*align-content: center;*/
-
 }
 
 .button{
