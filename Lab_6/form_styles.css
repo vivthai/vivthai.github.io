@@ -4,7 +4,7 @@ body{
 
 h1{
     text-align: center;
-    color: 	#484848;
+    color: 	#000000;
     font-family: "Times New Roman", Times, serif;
 }
 
@@ -20,8 +20,8 @@ label {
     text-align: right;
     margin-top: 10px;
     margin-bottom: 10px;
-    color: 	#484848;
-    font-family: 'Heebo', sans-serif;
+    color: 	#000000;
+    font-family: "Times New Roman", Times, serif;
     font-size: 17px;
 }
 
@@ -30,19 +30,18 @@ input, textarea {
     width: 300px;
     box-sizing: border-box;
     border: 1px solid #999;
-    font-family: 'Rokkitt', serif;
+    font-family: "Times New Roman", Times, serif;
 }
 
 ul {
     list-style: none;
 }
 
-.button{
-  background-color: #FFBD58; 
-  color: #FF9B39;
-  border-radius: 15px;
-  width: 100px;
-  height: 40px;
-  margin-top: 10px;
-  box-shadow: none;
+.button{  
+    color: #FF9B39;
+    border-radius: 15px;
+    width: 100px;
+    height: 40px;
+    margin-top: 10px;
+    box-shadow: none;
 }
