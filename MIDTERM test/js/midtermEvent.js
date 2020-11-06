@@ -1,0 +1,1 @@
+document.getElementById("btnGet").addEventListener("click", myFunction);function myFunction() {var id1 = document.getElementById("midtermMessage1");id1.parentNode.removeChild(id1);document.getElementById("midtermMessage2").innerHTML = "This is the submission for Vivian Thai";document.replaceChild(midtermMessage2,midtermMessage1);}
