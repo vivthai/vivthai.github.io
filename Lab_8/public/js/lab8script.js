@@ -13,9 +13,9 @@ async function getData() {
             let listSize = json.data.children.length; //list size
             // Loop to pick 5 random entries
             for (x = 0; x < 5; x++) {
-                num=Math.floor(Math.random() * listSize);
+                num = Math.floor(Math.random() * listSize);
                 theData = json.data.children[num].data;
-                subred= theData.subreddit;
+                subred = theData.subreddit;
                 auth = theData.author;
                 ti = theData.title;
                 up = theData.ups;
