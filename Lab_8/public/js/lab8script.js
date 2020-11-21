@@ -22,7 +22,7 @@ async function getData() {
                 let message = "<b>Subreddit </b>: " + subred + " <b>Author</b>:" + ti + " <b>Up votes</b>: " + up;
                 let createli = document.createElement("li"); //put message in li
                 liforappend = createli.innerHTML = message;
-                let theredditlist = document.querySelector("redditList");
+                let theredditlist = document.querySelector("#redditList");
                 theredditlist.append(liforappend); //add li to theredditlist
                 /*
                     Get a random number within the size of the list
