@@ -33,7 +33,7 @@ async function getData() {
                     Add a data entry to chartValues with author as the label and ups as the y component
                 */
                 /*.......*/
-                let addToChart = {'label':author,y:ups}; // Gave this. This needs to be added to the 'chartValues'
+                let addToChart = {'label':auth,y:up}; // Gave this. This needs to be added to the 'chartValues'
                 /*.......*/
                 chartValues.push(addToChart);
             }
