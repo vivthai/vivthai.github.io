@@ -1,0 +1,16 @@
+{
+  "name": "thai_lab8",
+  "version": "1.0.0",
+  "description": "This is a package.json file.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Vivian Thai",
+  "license": "ISC"
+}
