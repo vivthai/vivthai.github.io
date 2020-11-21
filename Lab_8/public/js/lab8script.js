@@ -16,10 +16,10 @@ async function getData() {
                 num = Math.floor(Math.random() * listSize);
                 theData = json.data.children[num].data;
                 subred = theData.subreddit;
-                auth = theData.author;
-                ti = theData.title;
-                up = theData.ups;
-                let message = "<b>Subreddit </b>: " + subred + " <b>Author</b>:" + ti + " <b>Up votes</b>: " + up;
+                theAuthor = theData.author;
+                theTtitle = theData.title;
+                upVotes = theData.ups;
+                let message = "<b>Subreddit </b>: " + subred + " <b>Author</b>:" + theTtitle + " <b>Up votes</b>: " + upVotes;
                 let createli = document.createElement("li"); //put message in li
                 createli.innerHTML = message;
                 let theredditlist = document.querySelector("#redditList");
@@ -33,7 +33,7 @@ async function getData() {
                     Add a data entry to chartValues with author as the label and ups as the y component
                 */
                 /*.......*/
-                let addToChart = {'label':auth,y:up}; // Gave this. This needs to be added to the 'chartValues'
+                let addToChart = {'label':theAuthor,y:upVotes}; // Gave this. This needs to be added to the 'chartValues'
                 /*.......*/
                 chartValues.push(addToChart);
             }
