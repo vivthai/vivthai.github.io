@@ -21,9 +21,9 @@ async function getData() {
                 up = theData.ups;
                 let message = "<b>Subreddit </b>: " + subred + " <b>Author</b>:" + ti + " <b>Up votes</b>: " + up;
                 let createli = document.createElement("li"); //put message in li
-                liforappend = createli.innerHTML = message;
+                createli.innerHTML = message;
                 let theredditlist = document.querySelector("#redditList");
-                theredditlist.append(liforappend); //add li to theredditlist
+                theredditlist.append(createli); //add li to theredditlist
                 /*
                     Get a random number within the size of the list
                     Get subreddit, author, title, and ups from record
@@ -48,7 +48,6 @@ window.onload = async function makeChart() {
         title: {
             text: "Upvotes"
         },
-
         data: [     
             { 
                 type: "column",
@@ -57,7 +56,6 @@ window.onload = async function makeChart() {
             }
         ]
     });
-    
     chart.render();
 }
 
