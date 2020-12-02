@@ -15,7 +15,7 @@ router.post('/task', (req, res) => {
         name: req.body.taskName,
         dueDate: req.body.taskDueDate // Example 2020-11-24
     }
-    
+
     var sql ='INSERT INTO tasklist (taskName, dueDate) VALUES (?,?)'
     var params =[task.name, task.dueDate]
     db.run(sql, params, function (err, result) {
@@ -29,7 +29,6 @@ router.post('/task', (req, res) => {
             "id" : this.lastID
         })
     });
-    
 })
 
 //GET
@@ -39,7 +38,7 @@ router.get('/task', (req, res) => {
         return res.status(400).send('Missing URL parameter id')
     }
     let sql = "select * from tasklist where id = ?"
-    console.log("req.query.taskId: " + req.query.taskId)//TODO)
+    console.log("req.query.taskId: " + req.query.taskId)
     let params = [req.query.taskId]
     db.get(sql, params, (err, row) => {
         if (err) {
@@ -59,7 +58,7 @@ router.put('/task', (req, res) => {
     var data = {
         id : req.query.taskId,
         taskName: req.body.taskName
-        
+
     }
     console.log("data.id:" + data.id + " name:" + data.taskName)
     if (!data.id) {
@@ -84,7 +83,6 @@ router.put('/task', (req, res) => {
 })
 
 //Delete
-//TODO add entire DELETE method
 router.delete('/task', (req, res) => {
     console.log(req.query)
     if (!req.query.taskId) {
